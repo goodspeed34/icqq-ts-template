@@ -1,5 +1,5 @@
 "use strict"
-const { bot } = require("./index")
+import { bot } from "./index"
 
 // 同意好友申请
 bot.on("request.friend", e => e.approve())

@@ -1,20 +1,18 @@
 "use strict"
-const { createClient } = require("oicq")
+import { createClient } from "oicq";
 
 const account = 0
 
-const bot = createClient(account)
+export const bot = createClient(account)
 
 bot
-.on("system.login.qrcode", function (e) {
+.on("system.login.qrcode", function () {
 	this.logger.mark("扫码后按Enter完成登录")
 	process.stdin.once("data", () => {
 		this.login()
 	})
 })
 .login()
-
-exports.bot = bot
 
 // template plugins
 require("./plugin-hello") //hello world

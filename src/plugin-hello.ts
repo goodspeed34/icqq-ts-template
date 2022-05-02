@@ -1,6 +1,6 @@
 "use strict"
-const { segment } = require("oicq")
-const { bot } = require("./index")
+import { segment } from "oicq"
+import { bot } from "./index"
 
 // hello world
 bot.on("message", function (msg) {
